@@ -54,7 +54,10 @@ class AppInsights
     }
 
     trackMetric = () => {}
-    trackRequest = () => {}
+
+    trackRequest = (data) => {
+        this.client.trackRequest(data);
+    }
 }
 
 module.exports = AppInsights;

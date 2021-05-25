@@ -6,7 +6,7 @@ const ailognginx = async (key, inputFile, format, interval = 300) => {
         console.log(input);
         const data = appInsights.convertStringToRequest(format, input, './format.json');
         const ai = appInsights.create(key);
-        ai.trackTrace(data);
+        ai.trackRequest(data);
     }, interval);
 }
 

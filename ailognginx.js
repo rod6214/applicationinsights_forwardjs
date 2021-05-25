@@ -1,7 +1,7 @@
 const { watcher } = require('./core');
 const appInsights = require('./appInsights');
 
-const ailognginx = (key, inputFile, format, interval = 1000) => {
+const ailognginx = async (key, inputFile, format, interval = 300) => {
     watcher(inputFile, (input) => {
         const data = appInsights.convertStringToRequest(format, input, './format.json');
         console.log(data);

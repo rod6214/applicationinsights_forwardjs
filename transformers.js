@@ -2,7 +2,13 @@
 const timestampTransform = (input) => {
 
     if (input) {
-        return input;
+        const parcilDate = new Date(`${input}`.match(/\d{2}\/\w{3}\/\d{4}/)[0]);
+        const parcialTime = `${input}`.match(/:\d{2}:\d{2}:\d{2}/)[0].replace(/:/, '');
+        const parcialMillisecs = `${input}`.match(/\+\d{4}/)[0];
+        // console.log(parcilDate)
+        // return input;
+        const date = parcilDate.toISOString();
+        return date.replace(/\d{2}:\d{2}:\d{2}\.\d{3}Z/, `${parcialTime}.${parcialMillisecs}Z`)
     }
 
     throw new Error('The timestamp property couldn\'t be converted');

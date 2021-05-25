@@ -2,7 +2,7 @@
 const appInsights = require('./appInsights');
 const { watcher } = require('./core');
 
-const ailogtrace = (key, inputFile, interval = 1000) => {
+const ailogtrace = async (key, inputFile, interval = 300) => {
     
     watcher(inputFile, (data) => {
         console.log(data);

@@ -89,14 +89,18 @@ const watcher = (inputFile, callback, interval) => {
                 if (content && content !== text)
                 {
                     text = content;
-                    
-                    const lines = text.split('\r\n');
-                    const lastLine = lines[lines.length - 1];
 
-                    if (lastLine) 
+                    const lines = text.split('\n');
+
+                    let lastLine = lines[lines.length - 1];
+
+                    if (!lastLine && lines.length > 1)
                     {
-                        queue.push(lastLine);
+                       lastLine = lines[lines.length - 2].replace('\n', '');
                     }
+
+                    if (lastLine)
+                        queue.push(lastLine);
                 }
             }
         }

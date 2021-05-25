@@ -56,7 +56,8 @@ class AppInsights
     trackMetric = () => {}
 
     trackRequest = (data) => {
-        this.client.trackRequest(data);
+        // this.client.trackRequest(data);
+        this.client.trackRequest({name:"GET /customers", url:"http://myserver/customers", duration:309, resultCode:200, success:true});
     }
 }
 

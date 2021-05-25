@@ -1,0 +1,48 @@
+{
+    "client_IP": {
+        "key": "$remote_addr",
+        "type": "string"
+    },
+    "operation_Name": {
+        "key": "$command",
+        "type": "string"
+    },
+    "appId": {
+        "key": "$app",
+        "type": "string"
+    },
+    "iKey": {
+        "key": "$name",
+        "type": "string"
+    },
+    "timestamp": {
+        "key": "$time_local",
+        "custom_transform": "timestampTransform"
+    },
+    "url": {
+        "key": "$pageurl",
+        "type": "string"
+    },
+    "duration": {
+        "key": "$session_readable_time",
+        "custom_transform": "durationTransform"
+    },
+    "customMeasurements":{
+        "args": {
+            "key": "$args",
+            "type": "string"
+        },
+        "bytes_received": {
+            "key": "$bytes_received",
+            "type": "number"
+        },
+        "bytes_sent": {
+            "key": "$bytes_sent",
+            "type": "number"
+        },
+        "flashver": {
+            "key": "$flashver",
+            "type": "string"
+        }
+    }
+}

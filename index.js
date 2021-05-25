@@ -8,7 +8,7 @@ const pattern = '$remote_addr [$time_local] $command "$app" "$name" "$args" - $b
 function main(argv) {
     let key, access_log_in, error_log_in;
     
-    key = process.env['IKEY'];
+    key = process.env['IKEY'] || argv['key'];
     access_log_in = argv['access_log_in'];
     error_log_in = argv['error_log_in'];
 

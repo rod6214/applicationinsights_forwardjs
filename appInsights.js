@@ -8,7 +8,7 @@ class AppInsights
     {
         appInsights.setup(key)
             .setAutoDependencyCorrelation(true)
-            .setAutoCollectRequests(true)
+            .setAutoCollectRequests(false)
             .setAutoCollectPerformance(true, true)
             .setAutoCollectExceptions(true)
             .setAutoCollectDependencies(true)

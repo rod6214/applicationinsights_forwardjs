@@ -60,7 +60,7 @@ class AppInsights
             name:data.iKey, 
             url:data.url, 
             duration:data.duration,
-            customMeasurements: data.customMeasurements,
+            properties: data.customMeasurements,
             resultCode:200, 
             success:true});
     }
